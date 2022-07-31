@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        body{ background-color : NavajoWhite;}
+        input{float: right;}
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center; font-family:verdana;">REGISTRATION</h2>
+
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <fieldset style="margin-left:40%; margin-right:35%; display:block;">
+    <p><label>Username</label>
+    <input type="text" name="username" placeholder="Enter the username" required>
+     </p>
+    <label>Firstname</label>
+    <input type="text" name="firstname" placeholder="Enter the firstname" required>
+        <p></p>
+    <label>Lastname</label>
+    <input type="text" name="lastname" placeholder="Enter the lastname" required>
+        <p></p>
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Enter the Email" required>
+        <p></p>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter the password" required>
+        <p></p>
+    <label>Confirm Password</label>
+    <input type="password" name="c_password" placeholder="Enter the confirm password" required>
+        <p></p>
+    <input type="submit" value="submit">
+    </fieldset>
+</form>
+{% for msg in messages %}
+<h3 style="text-align:center; font-family:verdana;">{{msg}}</h3>
+
+{% endfor %}
+</body>
+</html>
