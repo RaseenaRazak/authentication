@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <style>
+        body{ background-color : NavajoWhite;}
+        input{float: right;}
+    </style>
+</head>
+<body>
+<h2 style="text-align:center; font-family:verdana;">LOGIN</h2>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <fieldset style="margin-left:40%; margin-right:35%; display:block;">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter the username">
+        <p></p>
+         <label>Password</label>
+        <input type="password" name="password" placeholder="Enter the password">
+            <p></p>
+        <input type="submit" value="LOGIN">
+    </form>
+</body>
+</html>
